@@ -13,6 +13,9 @@
 - ~ It's take 10-15 minutes to install all it's framework dependency/library files.
 
 
+---
+### clear cache
+- => bash clear.sh
 
 ---
 # Notes for programmer

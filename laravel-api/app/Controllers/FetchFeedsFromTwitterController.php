@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\FetchFeedsFromTwitterRepository;
+use App\Http\Requests\FetchFeedsFromTwitterRequest;
 
 class FetchFeedsFromTwitterController extends Controller
 {
@@ -33,26 +34,34 @@ class FetchFeedsFromTwitterController extends Controller
     }
 
     // API process for result..
+    // public function make(FetchFeedsFromTwitterRequest $request)
     public function make(Request $request)
     {
+    	// dd("---START--FetchFeedsFromTwitterController@make--");
+    	// dd("--request--",$request);
+    	// dd("--request->all--",$request->all());
+    	
     	$input = $request->all();
-    	$searchTags = $input;
-
-    	// echo "--@searchTags-Request--";
-    	// dump(Request);
-
-
-    	echo "--@searchTags--";
-    	dump($searchTags);
-    	exit;
-
-    	// echo "--@searchTags-all--";
-    	// dump($searchTags->all());
-
-		$this->reqData = $searchTags;
-
     	$repoFetchData = App(FetchFeedsFromTwitterRepository::class);
-    	$data = $repoFetchData->fetchFeedDataFromTwitter($this->reqData);
+
+
+    	// Varify Tocken
+    	$token = $input['token'];
+    	// dd("--token--",$token);
+    	$flagVerifyToken = $repoFetchData->verifyToken($token);
+    	// dd("--TOKEN-data--",$flagVerifyToken);
+    	if(!$flagVerifyToken){
+    		return "Invalid Token!";
+    	}
+
+
+    	//fetch data
+    	$searchTags = $input['search_tags'];
+    	$dataFetchFeedData = $repoFetchData->fetchFeedDataFromTwitter($searchTags);
+    	dump("--dataFetchFeedData--",$dataFetchFeedData);
+    	if(!$dataFetchFeedData['status']){
+    		return $dataFetchFeedData['msg'];	
+    	}
 
     	return 0;
     }
