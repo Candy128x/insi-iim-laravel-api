@@ -11,17 +11,17 @@
 ## About API
 
 ### 1) fetch_feeds_from_domain
-[URL]
+- [URL]
 	- http://insilaraapi.local.com/fetch_feeds_from_domain
-[method]
+- [method]
 	- POST
-[parameter]
+- [parameter]
 	-	{
 		    "search_tags": "salt,onions",
 		    "token": "insi001laraAPI"
 		}
 
-[respoonse]
+- [respoonse]
 ```
 {
     "title": "Recipe Puppy",
@@ -94,5 +94,5 @@
 
 
 ---
-## 1) index.html
-<kbd><img src="/imgs-readme/Screenshot_from_2019-05-11_00-10-27_2_censored.png" alt="img:index.html" title="page:index.html"></img></kbd>
+## 1) Postman
+<kbd><img src="/imgs-readme/Screenshot_from_2019-05-11_00-10-27_2_censored.png" alt="" title=""></img></kbd>
