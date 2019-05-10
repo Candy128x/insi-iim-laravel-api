@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Support\Facades\Config;
 
-class FetchFeedsFromTwitterRepository
+class FetchFeedsFromDomainRepository
 {
 
 	public function verifyToken($token)
@@ -12,7 +12,7 @@ class FetchFeedsFromTwitterRepository
 		return (Config::get('appn.API_TOKEN') == $token) ? TRUE : FALSE;
 	}
 
-	public function fetchFeedDataFromTwitter($searchTags)
+	public function fetchFeedDataFromDomain($searchTags)
 	{
 		// echo "--Repository-searchTags--";
 		// dump($searchTags);

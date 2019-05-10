@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Http\Request;
 
-class FetchFeedsFromTwitterRequest extends Request
+class FetchFeedsFromDomainRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

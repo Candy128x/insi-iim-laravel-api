@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\FetchFeedsFromTwitterRepository;
-use App\Http\Requests\FetchFeedsFromTwitterRequest;
+use App\Repositories\FetchFeedsFromDomainRepository;
+use App\Http\Requests\FetchFeedsFromDomainRequest;
 
-class FetchFeedsFromTwitterController extends Controller
+class FetchFeedsFromDomainController extends Controller
 {
 
 	protected $reqData;
@@ -34,15 +34,15 @@ class FetchFeedsFromTwitterController extends Controller
     }
 
     // API process for result..
-    // public function make(FetchFeedsFromTwitterRequest $request)
+    // public function make(FetchFeedsFromDomainRequest $request)
     public function make(Request $request)
     {
-    	// dd("---START--FetchFeedsFromTwitterController@make--");
+    	// dd("---START--FetchFeedsFromDomainController@make--");
     	// dd("--request--",$request);
     	// dd("--request->all--",$request->all());
     	
     	$input = $request->all();
-    	$repoFetchData = App(FetchFeedsFromTwitterRepository::class);
+    	$repoFetchData = App(FetchFeedsFromDomainRepository::class);
 
 
     	// Varify Tocken
@@ -60,7 +60,7 @@ class FetchFeedsFromTwitterController extends Controller
 
     	//fetch data
     	$searchTags = $input['search_tags'];
-    	$dataFetchFeedData = $repoFetchData->fetchFeedDataFromTwitter($searchTags);
+    	$dataFetchFeedData = $repoFetchData->fetchFeedDataFromDomain($searchTags);
     	// dump("--dataFetchFeedData--",$dataFetchFeedData);
         $statusDataFetchFeedData = isset($dataFetchFeedData['status']) ? TRUE : FALSE;
     	if($statusDataFetchFeedData){

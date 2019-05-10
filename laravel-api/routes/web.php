@@ -27,5 +27,5 @@ Route::post('/hello',function(){
 // Route::any('/fetch_feeds_from_twitter', 'FetchFeedsFromTwitterController@getData')
 // ->name('fetch_feeds_from_twitter.get_data');
 
-Route::any('/fetch_feeds_from_twitter', 'FetchFeedsFromTwitterController@make')
-->name('fetch_feeds_from_twitter.get_data');
+Route::any('/fetch_feeds_from_domain', 'FetchFeedsFromDomainController@make')
+->name('fetch_feeds_from_domain.get_data');
