@@ -17,5 +17,5 @@ Route::get('/', function () {
 });
 
 
-Route::any('/fetch_feeds_from_domain', 'FetchFeedsFromDomainController@make')
+Route::post('/fetch_feeds_from_domain', 'FetchFeedsFromDomainController@make')
 ->name('fetch_feeds_from_domain.get_data');

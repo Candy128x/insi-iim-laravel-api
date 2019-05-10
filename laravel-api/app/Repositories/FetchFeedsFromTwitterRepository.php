@@ -6,12 +6,23 @@ use Illuminate\Support\Facades\Config;
 
 class FetchFeedsFromDomainRepository
 {
-
+    /**
+     * Verify token
+     *
+     * @param  string $token
+     * @return boolean Response
+     */
 	public function verifyToken($token)
 	{
 		return (Config::get('appn.API_TOKEN') == $token) ? TRUE : FALSE;
 	}
 
+    /**
+     * Fetch the data from the domain
+     *
+     * @param  string $searchTags
+     * @return json Response
+     */
 	public function fetchFeedDataFromDomain($searchTags)
 	{
 		// using cURL
