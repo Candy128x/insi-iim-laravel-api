@@ -51,19 +51,23 @@ class FetchFeedsFromTwitterController extends Controller
     	$flagVerifyToken = $repoFetchData->verifyToken($token);
     	// dd("--TOKEN-data--",$flagVerifyToken);
     	if(!$flagVerifyToken){
-    		return "Invalid Token!";
+            // $ret['results']['status'] = "error";
+            // $ret['results']['title'] = "Invalid Token!";
+            $ret = ['results' =>[['status' => 'error', 'msg' => 'Invalid Token!']]]; 
+    		return response()->JSON($ret);
     	}
 
 
     	//fetch data
     	$searchTags = $input['search_tags'];
     	$dataFetchFeedData = $repoFetchData->fetchFeedDataFromTwitter($searchTags);
-    	dump("--dataFetchFeedData--",$dataFetchFeedData);
-    	if(!$dataFetchFeedData['status']){
+    	// dump("--dataFetchFeedData--",$dataFetchFeedData);
+        $statusDataFetchFeedData = isset($dataFetchFeedData['status']) ? TRUE : FALSE;
+    	if($statusDataFetchFeedData){
     		return $dataFetchFeedData['msg'];	
     	}
 
-    	return 0;
+    	return $dataFetchFeedData;
     }
 
 

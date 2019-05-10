@@ -11,12 +11,13 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-Route::get('/hello',function(){
+Route::post('/hello',function(){
     return 'Hello Developer :]';
 });
 
