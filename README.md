@@ -94,5 +94,13 @@
 
 
 ---
-## 1) Postman
-<kbd><img src="/imgs-readme/Screenshot_from_2019-05-11_00-10-27_2_censored.png" alt="" title=""></img></kbd>
+## 1) Postman Success Response
+	- sucess msg..
+<kbd><img src="/imgs-readme/Screenshot_from_2019-05-11_00-10-27_2_censored.jpg" alt="" title=""></img></kbd>
+
+
+---
+## 2) Postman Error Response
+	- error msg..
+<kbd><img src="/imgs-readme/Screenshot from_2019-05-11_00-35-28_2_censored.jpg" alt="" title=""></img></kbd>
+
