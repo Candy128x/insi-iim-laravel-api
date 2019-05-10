@@ -8,6 +8,11 @@
 
 
 ---
+### create virtual host on your system [optional]
+- with name: insilaraapi.local.com
+
+
+---
 ## About API
 
 ### 1) fetch_feeds_from_domain
@@ -16,10 +21,12 @@
 - [method]
 	- POST
 - [parameter]
-	-	{
-		    "search_tags": "salt,onions",
-		    "token": "insi001laraAPI"
-		}
+```
+{
+    "search_tags": "salt,onions",
+    "token": "insi001laraAPI"
+}
+```
 
 - [respoonse]
 ```
