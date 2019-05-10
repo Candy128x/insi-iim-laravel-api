@@ -111,3 +111,8 @@
 	- error msg..
 <kbd><img src="/imgs-readme/Screenshot from_2019-05-11_00-35-28_2_censored.jpg" alt="" title=""></img></kbd>
 
+
+---
+## 3) Postman Error Response, Invalid Response from API domain
+	- error msg..
+<kbd><img src="/imgs-readme/Screenshot_from_2019-05-11_01-19-39_censored.jpg" alt="" title=""></img></kbd>
