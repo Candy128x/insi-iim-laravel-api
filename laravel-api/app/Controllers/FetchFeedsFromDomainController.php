@@ -35,9 +35,12 @@ class FetchFeedsFromDomainController extends Controller
     	// Fetch Result Data
     	$searchTags = $input['search_tags'];
     	$dataFetchFeedData = $repoFetchData->fetchFeedDataFromDomain($searchTags);
-    	if('error' == $dataFetchFeedData['results'][0]['status']){
-    		return response()->JSON($dataFetchFeedData);
-    	}
+        if(isset($dataFetchFeedData['results'][0]['status'])) {
+            $hasError = ('error' == $dataFetchFeedData['results'][0]['status']) ? TRUE : FALSE;
+        	if($hasError){
+        		return response()->JSON($dataFetchFeedData);
+        	}
+        }
 
     	return $dataFetchFeedData;
     }
